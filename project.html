@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cẩm nang Masterise Homes</title>
+    <title>Chi tiết dự án | Cẩm nang Masterise Homes</title>
     <meta
       name="description"
-      content="Cẩm nang cư dân Masterise Homes với dự án, gian hàng, tin tức và thông tin liên hệ."
+      content="Trang chi tiết dự án Masterise với mô tả, gian hàng và tin tức theo từng dự án."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +18,8 @@
     <link rel="icon" href="assets/logo-camnang-masterise-crop.png" />
     <link rel="stylesheet" href="styles.css" />
     <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script defer src="script.js"></script>
+    <script defer src="site-data.js"></script>
+    <script defer src="project-detail.js"></script>
   </head>
   <body>
     <header class="site-header">
@@ -29,7 +30,7 @@
       <nav class="main-nav" aria-label="Điều hướng chính">
         <a href="projects.html">Dự Án</a>
         <a href="#stores">Gian Hàng</a>
-        <a href="#news">Tin Tức</a>
+        <a href="#projectNews">Tin Tức</a>
         <a href="learning.html">Học Tập</a>
         <a href="#contact">Liên hệ</a>
       </nav>
@@ -43,84 +44,55 @@
         </a>
         <label class="search-box" for="siteSearch">
           <i data-lucide="search" aria-hidden="true"></i>
-          <input id="siteSearch" type="search" placeholder="Tìm kiếm..." />
+          <input id="siteSearch" type="search" placeholder="Tìm nội dung..." />
         </label>
       </div>
     </header>
 
-    <main id="home">
-      <section class="hero-banner" aria-label="Banner chính">
-        <img
-          src="https://masterisehomes.com/_next/image?q=70&url=https%3A%2F%2Frevamp-ldp.masterisehomes.com%2Fuploads%2FMasteri_Cosmo_Central_bbf5e3661f.jpg&w=1920"
-          alt="Phối cảnh dự án Masterise"
-        />
-        <div class="hero-copy">
-          <p>Nhà tôi ở Masterise</p>
-          <h1>Cẩm nang cư dân</h1>
+    <main class="project-detail-page">
+      <section class="detail-hero" id="detailHero"></section>
+
+      <nav class="detail-jump" aria-label="Điều hướng nội dung dự án">
+        <a href="#overview"><i data-lucide="layout-dashboard" aria-hidden="true"></i>Tổng quan</a>
+        <a href="#stores"><i data-lucide="store" aria-hidden="true"></i>Gian hàng</a>
+        <a href="#projectNews"><i data-lucide="newspaper" aria-hidden="true"></i>Tin tức</a>
+      </nav>
+
+      <section class="detail-section" id="overview" aria-labelledby="overviewTitle">
+        <div class="detail-section-heading">
+          <p>Tổng quan</p>
+          <h2 id="overviewTitle">Thông tin dự án</h2>
         </div>
+        <div class="overview-grid" id="overviewGrid" aria-live="polite"></div>
       </section>
 
-      <section class="section projects-section" id="projects" aria-labelledby="projectsTitle">
-        <div class="section-title">
-          <h2 id="projectsTitle">Bạn ở đâu?</h2>
-          <p>Chọn miền, chọn dự án, sau đó xem các gian hàng đang có trong dự án.</p>
-          <span aria-hidden="true"></span>
+      <section class="detail-section" id="stores" aria-labelledby="storesTitle">
+        <div class="detail-section-heading">
+          <p>Khám phá</p>
+          <h2 id="storesTitle">Gian hàng trong dự án</h2>
         </div>
 
-        <div class="region-tabs" id="regionTabs" aria-label="Lọc dự án theo miền">
-          <button class="is-active" type="button" data-region="north">Miền Bắc</button>
-          <button type="button" data-region="central">Miền Trung</button>
-          <button type="button" data-region="south">Miền Nam</button>
-        </div>
-
-        <div class="project-grid" id="projectGrid" aria-live="polite"></div>
-        <div class="project-more" id="projectMore" hidden>
-          <button type="button" id="projectMoreButton">Xem thêm</button>
-        </div>
-
-        <section class="store-panel" id="stores" aria-labelledby="storesTitle">
-          <div class="store-panel-heading">
-            <div>
-              <p>Gian hàng theo dự án</p>
-              <h2 id="storesTitle">Chọn một dự án để xem gian hàng</h2>
-            </div>
-            <span id="storeCount">0 gian hàng</span>
+        <div class="store-discovery">
+          <div class="store-discovery-search">
+            <h3>Bạn muốn tìm gì?</h3>
+            <label for="projectStoreSearch">
+              <input id="projectStoreSearch" type="search" placeholder="Tìm kiếm gian hàng..." />
+              <i data-lucide="search" aria-hidden="true"></i>
+            </label>
           </div>
-          <div class="store-grid" id="storeGrid" aria-live="polite"></div>
 
-          <div class="project-news-block">
-            <div class="store-panel-heading compact">
-              <div>
-                <p>Tin tức dự án</p>
-                <h2 id="projectNewsTitle">Tin tức theo dự án</h2>
-              </div>
-              <span id="projectNewsCount">0 tin</span>
-            </div>
-            <div class="project-news-grid" id="projectNewsGrid" aria-live="polite"></div>
-          </div>
-        </section>
-      </section>
-
-      <section class="section learning-teaser" aria-labelledby="learningTeaserTitle">
-        <div>
-          <p>Cẩm nang học tập</p>
-          <h2 id="learningTeaserTitle">Giáo trình & bài tập bám sát SGK</h2>
-          <span>Lộ trình ngày, tuần, tháng cho cư dân nhí; làm bài để nhận sao và mở bằng hoàn thành.</span>
-        </div>
-        <a href="learning.html">
-          Vào học tập
-          <i data-lucide="arrow-right" aria-hidden="true"></i>
-        </a>
-      </section>
-
-      <section class="section news-section" id="news" aria-labelledby="newsTitle">
-        <div class="section-title">
-          <h2 id="newsTitle">Tin tức</h2>
-          <p>Các bản tin chung mới nhất dành cho cộng đồng cư dân Masterise.</p>
-          <span aria-hidden="true"></span>
+          <div class="store-category-chips" id="storeCategoryChips" aria-label="Lọc gian hàng theo nhu cầu"></div>
         </div>
 
-        <div class="news-grid" id="newsGrid" aria-live="polite"></div>
+        <div class="store-showcase-grid" id="detailStoreGrid" aria-live="polite"></div>
+      </section>
+
+      <section class="detail-section" id="projectNews" aria-labelledby="projectNewsTitle">
+        <div class="detail-section-heading">
+          <p>Tin tức</p>
+          <h2 id="projectNewsTitle">Tin tức dự án</h2>
+        </div>
+        <div class="news-grid" id="detailNewsGrid" aria-live="polite"></div>
       </section>
     </main>
 
