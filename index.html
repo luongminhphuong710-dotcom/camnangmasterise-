@@ -3,194 +3,133 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cẩm nang cư dân Masterise Homes</title>
+    <title>Cẩm Nang Masterise | Nhà tôi ở Masterise</title>
     <meta
       name="description"
-      content="Cổng cẩm nang cư dân theo 3 miền, dự án, gian hàng và tin tức Masterise Homes."
+      content="Cẩm nang cư dân Masterise: tra cứu dự án theo miền, thông tin dự án, gian hàng và tin tức cần biết."
     />
     <link rel="preconnect" href="https://masterisehomes.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://unpkg.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
     <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script defer src="site-data.js"></script>
     <script defer src="script.js"></script>
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="#home" aria-label="Về đầu trang">
-        <span class="brand-mark">M</span>
+      <a class="brand" href="index.html" aria-label="Cẩm Nang Masterise">
+        <span class="brand-mark">CM</span>
         <span>
-          <strong>Cẩm Nang Cư Dân</strong>
-          <small>Masterise Homes</small>
+          <strong>Cẩm Nang Masterise</strong>
+          <small>Nhà tôi ở Masterise</small>
         </span>
       </a>
 
       <nav class="main-nav" aria-label="Điều hướng chính">
-        <a href="#projects">Dự án</a>
-        <a href="#stores">Gian hàng</a>
-        <a href="#news">Tin tức</a>
+        <a href="#projects">Dự Án</a>
+        <a href="news.html">Tin Tức</a>
+        <a href="#about">Giới thiệu</a>
         <a href="#contact">Liên hệ</a>
       </nav>
+
+      <div class="header-actions">
+        <a class="icon-button" href="#projects" aria-label="Tài khoản cư dân">
+          <i data-lucide="user-round" aria-hidden="true"></i>
+        </a>
+        <a class="icon-button" href="tel:0988458783" aria-label="Gọi hotline">
+          <i data-lucide="phone" aria-hidden="true"></i>
+        </a>
+        <label class="top-search" for="searchInput">
+          <i data-lucide="search" aria-hidden="true"></i>
+          <input id="searchInput" type="search" placeholder="Tìm kiếm..." autocomplete="off" />
+        </label>
+      </div>
     </header>
 
-    <main id="home">
-      <section class="workspace">
-        <div class="workspace-copy">
-          <p class="eyebrow">Cẩm nang Masterise Homes</p>
-          <h1>
-            <span>Nhà tôi ở</span>
-            <span>Masterise Homes</span>
-          </h1>
-          <p>
-            Tra cứu nhanh dự án Masterise Homes theo miền Bắc, miền Trung,
-            miền Nam; xem gian hàng tiện ích và các tin tức liên quan đến từng
-            cộng đồng cư dân.
-          </p>
-
-          <div class="control-row" role="search">
-            <label class="search-box" for="searchInput">
-              <i data-lucide="search" aria-hidden="true"></i>
-              <input
-                id="searchInput"
-                type="search"
-                placeholder="Tìm dự án, thành phố, gian hàng..."
-                autocomplete="off"
-              />
-            </label>
-            <button class="primary-action" type="button" data-scroll-to="projects">
-              <i data-lucide="search" aria-hidden="true"></i>
-              Tìm kiếm
-            </button>
-          </div>
-        </div>
-
-        <figure class="workspace-media">
-          <img
-            src="https://masterisehomes.com/_next/image?q=70&url=https%3A%2F%2Frevamp-ldp.masterisehomes.com%2Fuploads%2FMasteri_Cosmo_Central_bbf5e3661f.jpg&w=1920"
-            alt="Phối cảnh dự án Masterise Homes"
-          />
-          <figcaption>
-            <span>Dữ liệu mẫu cho cổng cư dân</span>
-            <strong id="heroProjectCount">0 dự án</strong>
-          </figcaption>
-        </figure>
+    <main>
+      <section class="hero-banner" aria-label="Cẩm nang Masterise">
+        <img
+          src="https://masterisehomes.com/_next/image?q=70&url=https%3A%2F%2Frevamp-ldp.masterisehomes.com%2Fuploads%2FMasteri_Grand_Coast_a2c320e2ba.jpg&w=1920"
+          alt="Phối cảnh dự án Masterise Homes"
+        />
       </section>
 
-      <section class="region-band" aria-labelledby="regionsTitle">
-        <div class="section-heading">
-          <p class="eyebrow">Phân vùng</p>
-          <h2 id="regionsTitle">3 miền Bắc - Trung - Nam</h2>
-          <p>
-            Chọn miền để thu gọn danh sách dự án, gian hàng và tin tức phù hợp
-            với cư dân từng khu vực.
-          </p>
+      <section class="find-section" id="projects" aria-labelledby="projectsTitle">
+        <div class="section-heading centered">
+          <h1 id="projectsTitle">Bạn đang ở đâu?</h1>
+          <p>Chúng tôi sẽ giúp bạn tìm kiếm mọi thứ mà bạn cần</p>
+          <span class="title-divider" aria-hidden="true"></span>
         </div>
 
-        <div class="segmented" id="regionTabs" aria-label="Bộ lọc miền">
-          <button class="is-active" type="button" data-region="all">
-            <i data-lucide="layout-grid" aria-hidden="true"></i>
-            Tất cả
-          </button>
-          <button type="button" data-region="north">
-            <i data-lucide="mountain" aria-hidden="true"></i>
-            Miền Bắc
-          </button>
-          <button type="button" data-region="central">
-            <i data-lucide="waves" aria-hidden="true"></i>
-            Miền Trung
-          </button>
-          <button type="button" data-region="south">
-            <i data-lucide="sun" aria-hidden="true"></i>
-            Miền Nam
-          </button>
+        <div class="segmented" id="regionTabs" aria-label="Chọn miền">
+          <button class="is-active" type="button" data-region="all">Tất cả</button>
+          <button type="button" data-region="north">Miền Bắc</button>
+          <button type="button" data-region="central">Miền Trung</button>
+          <button type="button" data-region="south">Miền Nam</button>
         </div>
 
-        <div class="region-summary" id="regionSummary" aria-live="polite"></div>
+        <div class="project-grid" id="projectGrid" aria-live="polite"></div>
       </section>
 
-      <section class="content-section" id="projects" aria-labelledby="projectsTitle">
-        <div class="section-heading">
-          <p class="eyebrow">Dự án</p>
-          <h2 id="projectsTitle">Danh sách dự án theo miền</h2>
-          <p>
-            Nhấn vào từng dự án để xem nhanh khu vực, thông tin cư dân và gợi ý
-            gian hàng liên quan.
-          </p>
+      <section class="news-section" id="news" aria-labelledby="newsTitle">
+        <div class="section-heading centered">
+          <h2 id="newsTitle">Thông tin cần biết</h2>
+          <p>Cung cấp những thông tin mới và nhanh nhất tại các khu đô thị Masterise Homes</p>
+          <span class="title-divider" aria-hidden="true"></span>
         </div>
 
-        <div class="project-grid" id="projectGrid"></div>
+        <div class="news-list" id="newsGrid"></div>
       </section>
 
-      <section class="detail-band" aria-labelledby="detailTitle">
-        <div class="project-detail" id="projectDetail">
-          <div class="empty-state">
-            <i data-lucide="mouse-pointer-click" aria-hidden="true"></i>
-            <h2 id="detailTitle">Chọn một dự án</h2>
-            <p>Thông tin vận hành và cẩm nang cư dân sẽ hiển thị tại đây.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="content-section" id="stores" aria-labelledby="storesTitle">
-        <div class="section-heading with-actions">
-          <div>
-            <p class="eyebrow">Gian hàng</p>
-            <h2 id="storesTitle">Tiện ích và dịch vụ cư dân</h2>
-            <p>
-              Bộ dữ liệu mẫu cho các gian hàng thường gặp trong khu dân cư:
-              mua sắm, ăn uống, sức khỏe, giao nhận và dịch vụ gia đình.
-            </p>
-          </div>
-          <div class="chip-row" id="storeCategories" aria-label="Lọc loại gian hàng"></div>
-        </div>
-
-        <div class="store-grid" id="storeGrid"></div>
-      </section>
-
-      <section class="news-band" id="news" aria-labelledby="newsTitle">
-        <div class="section-heading">
-          <p class="eyebrow">Tin tức</p>
-          <h2 id="newsTitle">Bản tin dự án Masterise Homes</h2>
-          <p>
-            Các thẻ tin tức giúp cư dân theo dõi cập nhật dự án, tiện ích và
-            hoạt động cộng đồng theo từng khu vực.
-          </p>
-        </div>
-
-        <div class="news-grid" id="newsGrid"></div>
-      </section>
-
-      <section class="contact-band" id="contact" aria-labelledby="contactTitle">
+      <section class="about-section" id="about" aria-labelledby="aboutTitle">
         <div>
-          <p class="eyebrow">Hỗ trợ</p>
-          <h2 id="contactTitle">Kênh liên hệ cư dân</h2>
-          <p>
-            Cấu trúc này có thể gắn với hotline, ban quản lý, form phản ánh
-            hoặc tài liệu cư dân của từng dự án khi bạn có dữ liệu vận hành.
-          </p>
+          <p class="eyebrow">CẨM NANG CƯ DÂN</p>
+          <h2 id="aboutTitle">Cổng thông tin & Dịch vụ toàn diện</h2>
         </div>
-
-        <div class="contact-actions">
-          <a href="tel:02839159159" class="primary-action">
-            <i data-lucide="phone" aria-hidden="true"></i>
-            (028) 39 159 159
-          </a>
-          <a href="mailto:sales@masterisehomes.com" class="secondary-action">
-            <i data-lucide="mail" aria-hidden="true"></i>
-            Email hỗ trợ
-          </a>
-        </div>
+        <p>
+          Nơi tổng hợp mọi tiện ích, cửa hàng và các bản cập nhật mới nhất từ dự án của bạn. Tìm
+          kiếm nhanh chóng, trải nghiệm xuyên suốt và hoàn toàn minh bạch.
+        </p>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <p>
-        Bản demo cẩm nang cư dân. Tên dự án và một số tin tham khảo từ website
-        chính thức Masterise Homes; dữ liệu gian hàng là mẫu để thay thế bằng
-        thông tin vận hành thực tế.
-      </p>
-      <a href="https://masterisehomes.com/du-an" target="_blank" rel="noreferrer">
-        Nguồn dự án Masterise Homes
-      </a>
+    <footer class="site-footer" id="contact">
+      <div>
+        <h3>Liên hệ</h3>
+        <ul>
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>Vinhomes Ocean Park 2-3</li>
+          <li><i data-lucide="phone" aria-hidden="true"></i>Hotline: 0988 458 783</li>
+          <li>
+            <i data-lucide="mail" aria-hidden="true"></i>
+            <a href="mailto:luongminhphuong710@gmail.com">luongminhphuong710@gmail.com</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>Thông tin</h3>
+        <ul>
+          <li><i data-lucide="chevron-right" aria-hidden="true"></i>Giới thiệu</li>
+          <li>
+            <i data-lucide="chevron-right" aria-hidden="true"></i>
+            <a href="news.html">Thông tin cần biết</a>
+          </li>
+          <li><i data-lucide="chevron-right" aria-hidden="true"></i>Liên hệ</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Theo dõi</h3>
+        <ul>
+          <li><i data-lucide="facebook" aria-hidden="true"></i>Page: Cẩm Nang Masterise</li>
+          <li><i data-lucide="music-2" aria-hidden="true"></i>TikTok: Cẩm Nang Masterise</li>
+          <li><i data-lucide="copyright" aria-hidden="true"></i>Copyright 2026</li>
+        </ul>
+      </div>
     </footer>
   </body>
 </html>
